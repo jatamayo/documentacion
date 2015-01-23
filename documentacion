@@ -1,0 +1,25 @@
+							HTML
+<html ng-app="angularjs">
+<body>
+<div class="container">
+	<div class="row">
+		<div class="span12">
+			<div class="textoEjemplo" ng-controller="paises">
+				<div ng-repeat="jose in informacion">
+					e.name}}<span class="span1"> codigo: {{jose.code}}</span></h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+					java script... angularjs
+(function(){
+	var app=angular.module("angularjs",[]);
+	app.controller("paises",function($scope,$http){
+		//$scope.name="jose";
+	$http.get("data/paises.json").success(function(data){
+	$scope.informacion=data;
+	});
+});
